@@ -5,8 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Yongama Goso Portfolio  </title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root{
@@ -476,7 +475,75 @@
       border-top: 1px solid var(--line);
     }
 
-  
+    
+.lightbox{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 18px 24px;
+  z-index: 9999;
+}
+
+.lightbox:target{
+  display: flex;
+}
+
+
+.lightbox .bg{
+  position: absolute;
+  inset: 0;
+}
+
+.lightbox .box{
+  position: relative;
+  width: min(1050px, 92vw);
+  max-height: 82vh;
+  overflow: auto;
+  border-radius: 14px;
+  background: #141a24;
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 25px 80px rgba(0,0,0,.55);
+}
+
+.lightbox .box img{
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #0f1420;
+}
+
+.lightbox .cap{
+  padding: 12px 14px 16px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  color: rgba(255,255,255,.85);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.lightbox .close{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  color: var(--cyan);
+  font-size: 18px;
+  font-weight: 900;
+}
+.lightbox .close:hover{
+  background: rgba(0,230,255,.10);
+  border-color: rgba(0,230,255,.22);
+}
+
+   
     @media (max-width: 900px){
       .hero{ grid-template-columns: 1fr; text-align:center; }
       .desc{ margin-left:auto; margin-right:auto; }
@@ -490,7 +557,7 @@
   </style>
   
   </head>
-  <body>
+ <body>
     <div class="wrap"> 
       
     <section class="section" id="home">
@@ -501,7 +568,7 @@
           <a href="#about">About</a>
           <a href="#services">Services</a>
           <a href="#skills">Skills</a>
-          <a href="#projects">Pojects</a>
+          <a href="#projects">Projects</a>
           <a href="#certificates">Certificates</a>
           <a href="#contact">Contact</a>
         </div>
@@ -541,7 +608,7 @@
 
         <div class="hex-wrap">
           <div class="hex">
-            <img src="assets/profile.png" alt="Profile photo">
+            <img src="Images/profile/Image.jpeg" alt="Profile photo">
           </div>
         </div>
       </div>
@@ -550,7 +617,7 @@
       <div class="about" id="about">
         <div class="hex-wrap">
           <div class="hex small">
-            <img src="assets/profile.png" alt="Profile photo">
+            <img src="Images/profile/Image.jpeg" alt="Profile photo">
           </div>
         </div>
 
@@ -659,9 +726,11 @@
       <div class="grid-wrap">
         <div class="grid">
          <div class="tile">
-        <img src="assets/p1.jpg" alt="Project 1">
+          <a href="#img-placeMe">
+           <img src="Images/projects/Screenshot-2026-01-21-015109.png" alt="PlaceMe – Student Accommodation website">
+            </a>
             <div class="info">
-              <b>PlaceMe – Student Accommodation</b>
+              <b>PlaceMe – Student Accommodation Website</b>
               <small>A student accommodation website designed to help students find affordable residences near the University of Fort Hare. The platform includes property listings, navigation, and call-to-action features for applications and inquiries.</small>
               <div class="badges">
                <span class="badge">HTML</span>
@@ -673,7 +742,9 @@
           </div>
 
           <div class="tile">
-            <img src="assets/p2.jpg" alt="Project 2">
+            <a href="#img-edurand">
+            <img src="Images/projects/Screenshot-2025-09-17-232627.png" alt="EduRand – Financial Education App">
+            </a>
             <div class="info">
               <b>EduRand – Financial Education App</b>
               <small>A student-focused financial education platform that helps users track savings, complete lessons, and earn achievements.</small>
@@ -687,7 +758,9 @@
           </div>
 
           <div class="tile">
-            <img src="assets/p3.jpg" alt="Project 3">
+            <a href="#img-journeyMap">
+            <img src="Images/projects/Screenshot-2025-09-21-072807.png" alt="JourneyMap – Customer Journey Platform">
+            </a>
             <div class="info">
               <b>JourneyMap – Customer Journey Platform</b>
               <small>  A web platform that visualizes the customer journey from awareness to advocacy using a clean and structured interface.</small>
@@ -703,29 +776,21 @@
           </div>
 
           <div class="tile">
-            <img src="assets/p4.jpg" alt="Project 4">
+            <a href="#img-laundry">
+            <img src="Images/projects/image.png" alt="Project 4">
+            </a>
             <div class="info">
-              <b>Project 4</b>
-              <small>Short description about what you built and the tools you used.</small>
+              <b>Laundry Website</b>
+              <small>Responsive UI with service sections and pricing layout.</small>
+              <div class="badges">
+               <span class="badge">HTML</span>
+               <span class="badge">CSS</span>
+               <span class="badge js">JavaScript</span>
+              </div>
             </div>
           </div>
 
-          <div class="tile">
-            <img src="assets/p5.jpg" alt="Project 5">
-            <div class="info">
-              <b>Project 5</b>
-              <small>Short description about what you built and the tools you used.</small>
-            </div>
-          </div>
-
-          <div class="tile">
-            <img src="assets/p6.jpg" alt="Project 6">
-            <div class="info">
-              <b>Project 6</b>
-              <small>Short description about what you built and the tools you used.</small>
-            </div>
-          </div>
-        </div>
+       </div>
       </div>
     </section>
 
@@ -737,50 +802,62 @@
       <div class="grid-wrap">
         <div class="grid">
           <div class="tile">
-            <img src="assets/certs/c1.jpg" alt="Certificate 1">
+             <a href="#img-fullstack">
+            <img src="Images/certificates/Screenshot-2026-01-21-013354.png" alt="Full Stack Developer Certificate">
+           </a>
             <div class="info">
-              <b>Certificate 1</b>
-              <small>Course / Institution name here</small>
+              <b>Full Stack Developer Certificate</b>
+              <small>FNB App Academy 2025</small>
             </div>
           </div>
 
           <div class="tile">
-            <img src="assets/certs/c2.jpg" alt="Certificate 2">
+            <a href="#img-digital-learning">
+            <img src="Images/certificates/Screenshot-2026-01-21-013447.png" alt="Certificate 2">
+            </a>
             <div class="info">
-              <b>Certificate 2</b>
-              <small>Course / Institution name here</small>
+              <b>Digital Learning Certificate</b>
+              <small>Youth Development service</small>
             </div>
           </div>
 
           <div class="tile">
-            <img src="assets/certs/c3.jpg" alt="Certificate 3">
+            <a href="#img-effective-business-websites">
+            <img src="Images/certificates/Screenshot-2026-01-21-014335.png" alt="Certificate 3">
+            </a>
             <div class="info">
-              <b>Certificate 3</b>
-              <small>Course / Institution name here</small>
+              <b>Effective Business Websites Certificate</b>
+              <small>HP Life | HP Foundation</small>
             </div>
           </div>
 
           <div class="tile">
-            <img src="assets/certs/c4.jpg" alt="Certificate 4">
+            <a href="#img-ai-for-beginners">
+            <img src="Images/certificates/Screenshot-2026-01-21-014354.png" alt="Certificate 4">
+            </a>
             <div class="info">
-              <b>Certificate 4</b>
-              <small>Course / Institution name here</small>
+              <b>AI for Beginners Certificate</b>
+              <small>HP Life | HP Foundation</small>
             </div>
           </div>
 
           <div class="tile">
-            <img src="assets/certs/c5.jpg" alt="Certificate 5">
+            <a href="#img-starting-small-business">
+            <img src="Images/certificates/Screenshot-2026-01-21-014420.png" alt="Certificate 5">
+            </a>
             <div class="info">
-              <b>Certificate 5</b>
-              <small>Course / Institution name here</small>
+              <b>Starting a Small Business Certificate</b>
+              <small>HP Life | HP Foundation</small>
             </div>
           </div>
 
           <div class="tile">
-            <img src="assets/certs/c6.jpg" alt="Certificate 6">
+            <a href="#img-finding-funding">
+            <img src="Images/certificates/Screenshot-2026-01-21-014441.png" alt="Certificate 6">
+            </a>
             <div class="info">
-              <b>Certificate 6</b>
-              <small>Course / Institution name here</small>
+              <b>Finding Funding Certificate</b>
+              <small>HP Life | HP Foundation</small>
             </div>
           </div>
         </div>
@@ -815,4 +892,127 @@
     </section>
       
     </div> 
+<!-- ===== LIGHTBOXES (FULL IMAGE PREVIEW) ===== -->
+
+<div id="img-placeMe" class="lightbox" aria-label="PlaceMe full image">
+  <a class="bg" href="#projects" aria-label="Close"></a>
+  <div class="box">
+    <a class="close" href="#projects" aria-label="Close">✕</a>
+    <img src="Images/projects/Screenshot-2026-01-21-015109.png" alt="PlaceMe full image">
+    <div class="cap">
+      <b>PlaceMe – Student Accommodation Website</b><br>
+      HTML • CSS • JavaScript • SQL
+    </div>
+  </div>
+</div>
+
+<div id="img-edurand" class="lightbox" aria-label="EduRand full image">
+  <a class="bg" href="#projects" aria-label="Close"></a>
+  <div class="box">
+    <a class="close" href="#projects" aria-label="Close">✕</a>
+    <img src="Images/projects/Screenshot-2025-09-17-232627.png" alt="EduRand full image">
+    <div class="cap">
+      <b>EduRand – Financial Education App</b><br>
+      HTML • CSS • JavaScript • UI/UX
+    </div>
+  </div>
+</div>
+
+<div id="img-journeyMap" class="lightbox" aria-label="JourneyMap full image">
+  <a class="bg" href="#projects" aria-label="Close"></a>
+  <div class="box">
+    <a class="close" href="#projects" aria-label="Close">✕</a>
+    <img src="Images/projects/Screenshot-2025-09-21-072807.png" alt="JourneyMap full image">
+    <div class="cap">
+      <b>JourneyMap – Customer Journey Platform</b><br>
+      HTML • CSS • JavaScript • React • Git • UI/UX
+    </div>
+  </div>
+</div>
+
+<div id="img-laundry" class="lightbox" aria-label="Laundry Website full image">
+  <a class="bg" href="#projects" aria-label="Close"></a>
+  <div class="box">
+    <a class="close" href="#projects" aria-label="Close">✕</a>
+    <img src="Images/projects/image.png" alt="Laundry Website full image">
+    <div class="cap">
+      <b>Laundry Website</b><br>
+      HTML • CSS • JavaScript
+    </div>
+  </div>
+</div>
+
+<div id="img-fullstack" class="lightbox" aria-label="Full Stack Developer Certificate full image">
+  <a class="bg" href="#certificates" aria-label="Close"></a>
+  <div class="box">
+    <a class="close" href="#certificates" aria-label="Close">✕</a>
+    <img src="Images/certificates/Screenshot-2026-01-21-013354.png" alt="Full Stack Developer Certificate full image">
+    <div class="cap">
+      <b>Full Stack Developer Certificate</b><br>
+      FNB App Academy 2025
+    </div>
+  </div>
+</div>
+
+<div id="img-digital-learning" class="lightbox" aria-label="Digital Learning Certificate full image">
+  <a class="bg" href="#certificates" aria-label="Close"></a>
+  <div class="box">
+    <a class="close" href="#certificates" aria-label="Close">✕</a>
+    <img src="Images/certificates/Screenshot-2026-01-21-013447.png" alt="Digital Learning Certificate full image">
+    <div class="cap">
+      <b>Digital Learning Certificate</b><br>
+      Youth Development service
+    </div>
+  </div>
+</div>
+
+<div id="img-effective-business-websites" class="lightbox" aria-label="Effective Business Websites Certificate full image">
+  <a class="bg" href="#certificates" aria-label="Close"></a>
+  <div class="box">
+    <a class="close" href="#certificates" aria-label="Close">✕</a>
+    <img src="Images/certificates/Screenshot-2026-01-21-014335.png" alt="Effective Business Websites Certificate full image">
+    <div class="cap">
+      <b>Effective Business Websites Certificate</b><br>
+      HP Life | HP Foundation
+    </div>
+  </div>
+</div>
+
+<div id="img-ai-for-beginners" class="lightbox" aria-label="AI for Beginners Certificate full image">
+  <a class="bg" href="#certificates" aria-label="Close"></a>
+  <div class="box">
+    <a class="close" href="#certificates" aria-label="Close">✕</a>
+    <img src="Images/certificates/Screenshot-2026-01-21-014354.png" alt="AI for Beginners Certificate full image">
+    <div class="cap">
+      <b>AI for Beginners Certificate</b><br>
+      HP Life | HP Foundation
+    </div>
+  </div>
+</div>
+
+<div id="img-starting-small-business" class="lightbox" aria-label="Starting a Small Business Certificate full image">
+  <a class="bg" href="#certificates" aria-label="Close"></a>
+  <div class="box">
+    <a class="close" href="#certificates" aria-label="Close">✕</a>
+    <img src="Images/certificates/Screenshot-2026-01-21-014420.png" alt="Starting a Small Business Certificate full image">
+    <div class="cap">
+      <b>Starting a Small Business Certificate</b><br>
+      HP Life | HP Foundation
+    </div>
+  </div>
+</div>
+
+<div id="img-finding-funding" class="lightbox" aria-label="Finding Funding Certificate full image">
+  <a class="bg" href="#certificates" aria-label="Close"></a>
+  <div class="box">
+    <a class="close" href="#certificates" aria-label="Close">✕</a>
+    <img src="Images/certificates/Screenshot-2026-01-21-014441.png" alt="Finding Funding Certificate full image">
+    <div class="cap">
+      <b>Finding Funding Certificate</b><br>
+      HP Life | HP Foundation
+    </div>
+  </div>
+</div>
+
   </body>
+</html>
