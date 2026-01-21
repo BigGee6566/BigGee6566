@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yongama Goso Portfolio  </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root{
+      --bg: #1b212c;
+      --panel: #232a36;
+      --card: #2b3341;
+      --line: rgba(255,255,255,.08);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.65);
+
+      --cyan: #00e6ff;
+      --shadow: 0 20px 55px rgba(0,0,0,.45);
+    }
+
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(900px 520px at 8% 15%, rgba(0,230,255,.18), transparent 55%),
+        radial-gradient(900px 520px at 95% 85%, rgba(0,230,255,.14), transparent 55%),
+        var(--bg);
+      color: var(--text);
+    }
+
+    a{ color: inherit; text-decoration:none; }
+    img{ display:block; width:100%; }
+
+    .wrap{
+      width: min(1100px, 92vw);
+      margin: 34px auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    .section{
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+   
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      padding: 18px 22px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(35,42,54,.6);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+    }
+    .brand{
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+    .brand span{ color: var(--cyan); }
+
+    .nav{
+      display:flex;
+      gap: 18px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .nav a{
+      padding: 6px 10px;
+      border-radius: 999px;
+      transition: .2s ease;
+    }
+    .nav a:hover{
+      color: var(--text);
+      background: rgba(0,230,255,.10);
+      box-shadow: 0 0 0 1px rgba(0,230,255,.18) inset;
+    }
+
+    
+    .hero{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 22px;
+      align-items:center;
+      padding: 26px 22px 28px;
+    }
+
+    .hello{
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 8px;
+      color: rgba(255,255,255,.85);
+    }
+    .name{
+      margin: 0;
+      font-size: 44px;
+      line-height: 1.05;
+      letter-spacing: -0.5px;
+    }
+    .role{
+      margin: 6px 0 12px;
+      font-weight: 800;
+      font-size: 18px;
+    }
+    .role span{ color: var(--cyan); }
+
+    .desc{
+      margin: 0 0 16px;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 55ch;
+      font-size: 14px;
+    }
+
+    .socials{
+      display:flex;
+      gap: 10px;
+      margin: 12px 0 16px;
+    }
+   .icon{
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,230,255,.35);
+  display:grid;
+  place-items:center;
+  color: var(--cyan);
+  background: rgba(0,230,255,.06);
+  transition: .2s ease;
+  font-size: 14px;     
+}
+
+.icon i{
+  line-height: 1;
+}
+
+    .icon:hover{
+      transform: translateY(-2px);
+      background: rgba(0,230,255,.12);
+      box-shadow: 0 10px 22px rgba(0,230,255,.12);
+    }
+
+    .btn{
+      display:inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,230,255,.45);
+      background: linear-gradient(180deg, rgba(0,230,255,.18), rgba(0,230,255,.06));
+      color: var(--cyan);
+      font-weight: 800;
+      font-size: 13px;
+      transition: .2s ease;
+    }
+    .btn:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(0,230,255,.12);
+    }
+
+    .hex-wrap{ display:flex; justify-content:center; align-items:center; }
+    .hex{
+      width: 280px;
+      height: 320px;
+      position: relative;
+      display:grid;
+      place-items:center;
+      filter: drop-shadow(0 18px 30px rgba(0,230,255,.18));
+    }
+    .hex::before{
+      content:"";
+      position:absolute;
+      inset: 0;
+      background: rgba(0,230,255,.16);
+      clip-path: polygon(50% 0%, 92% 25%, 92% 75%, 50% 100%, 8% 75%, 8% 25%);
+      box-shadow:
+        0 0 0 2px rgba(0,230,255,.50) inset,
+        0 0 45px rgba(0,230,255,.35);
+      border-radius: 10px;
+    }
+    .hex img{
+      width: 86%;
+      height: 86%;
+      object-fit: cover;
+      clip-path: polygon(50% 0%, 92% 25%, 92% 75%, 50% 100%, 8% 75%, 8% 25%);
+      position: relative;
+      border-radius: 8px;
+    }
+
+  
+    .about{
+      display:grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 22px;
+      align-items:center;
+      padding: 26px 22px;
+      background: rgba(255,255,255,.03);
+    }
+    .about h2{ margin:0 0 8px; font-size: 30px; }
+    .about h2 span{ color: var(--cyan); }
+    .about h4{
+      margin:0 0 10px;
+      color: rgba(255,255,255,.82);
+      font-weight: 800;
+    }
+    .about p{
+      margin:0 0 16px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    .hex.small{ width: 220px; height: 255px; }
+
+    
+    .title{
+      text-align:center;
+      padding: 18px 22px 0;
+    }
+    .title h2{
+      margin:0;
+      font-size: 26px;
+      font-weight: 900;
+    }
+    .title h2 span{ color: var(--cyan); }
+
+   
+    .services-grid{
+      padding: 18px 22px 24px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .service{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+      text-align:center;
+      transition: .2s ease;
+    }
+    .service:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(0,0,0,.35);
+      border-color: rgba(0,230,255,.18);
+    }
+    .service .s-icon{
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      margin: 0 auto 10px;
+      display:grid;
+      place-items:center;
+      color: var(--cyan);
+      background: rgba(0,230,255,.08);
+      border: 1px solid rgba(0,230,255,.18);
+      font-weight: 900;
+    }
+    .service h3{
+      margin: 0 0 8px;
+      font-size: 15px;
+      font-weight: 900;
+    }
+    .service p{
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .service a{
+      display:inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 12px;
+      color: var(--bg);
+      background: var(--cyan);
+      border: 1px solid rgba(0,230,255,.45);
+      transition: .2s ease;
+    }
+    .service a:hover{
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+    }
+
+    /* ===== Skills section ===== */
+.skills-wrap{
+  padding: 18px 22px 26px;
+}
+
+.skills-head h2{
+  margin: 0 0 8px;
+  font-size: 28px;
+  font-weight: 900;
+}
+.skills-head h2 span{ color: var(--cyan); }
+
+.skills-head p{
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+  max-width: 70ch;
+}
+
+.skills-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.skill-box{
+  position: relative;
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+  height: 110px;
+  display: grid;
+  place-items: center;
+  transition: .2s ease;
+}
+
+.skill-box:hover{
+  transform: translateY(-4px);
+  border-color: rgba(0,230,255,.18);
+  box-shadow: 0 18px 40px rgba(0,0,0,.35);
+}
+
+.skill-box i{
+  font-size: 44px;
+  color: rgba(255,255,255,.92);
+}
+
+.skill-box .tag{
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  color: rgba(255,255,255,.75);
+  background: rgba(0,0,0,.25);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+
+.skill-box .js{
+  color: #6de46d;
+}
+
+.badges{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.badge{
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(0,230,255,.08);
+  color: var(--cyan);
+  border: 1px solid rgba(0,230,255,.35);
+  letter-spacing: .2px;
+}
+
+.badge.js{ color:#6de46d; border-color:rgba(109,228,109,.5); }
+.badge.react{ color:#61dafb; border-color:rgba(97,218,251,.5); }
+.badge.csharp{ color:#9b6dff; border-color:rgba(155,109,255,.5); }
+.badge.python{ color:#ffd43b; border-color:rgba(255,212,59,.5); }
+.badge.git{ color:#f05032; border-color:rgba(240,80,50,.5); }
+.badge.sql{ color:#4db6ff; border-color:rgba(77,182,255,.5); }
+
+
+@media (max-width: 900px){
+  .skills-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+    .grid-wrap{ padding: 18px 22px 26px; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .tile{
+      background: #202735;
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 12px;
+      overflow:hidden;
+      transition: .2s ease;
+    }
+    .tile:hover{
+      transform: translateY(-4px);
+      border-color: rgba(0,230,255,.18);
+      box-shadow: 0 18px 40px rgba(0,0,0,.35);
+    }
+    .tile img{
+      height: 118px;
+      object-fit: cover;
+      filter: contrast(1.02) saturate(1.03);
+    }
+    .tile .info{ padding: 10px 10px 12px; }
+    .tile b{
+      display:block;
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+    .tile small{
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 12px;
+      display:block;
+    }
+
+ 
+    .contact-wrap{ padding: 18px 22px 26px; }
+    .form{
+      background: rgba(0,0,0,.14);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 12px;
+      padding: 16px;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .row{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    input, textarea{
+      width:100%;
+      padding: 11px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.10);
+      outline: none;
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      font-size: 13px;
+    }
+    textarea{ min-height: 140px; resize: vertical; }
+    input::placeholder, textarea::placeholder{ color: rgba(255,255,255,.45); }
+
+    .send{
+      display:block;
+      width: 150px;
+      margin: 12px auto 0;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,230,255,.45);
+      background: var(--cyan);
+      color: #081018;
+      font-weight: 900;
+      cursor: pointer;
+    }
+    .send:hover{ filter: brightness(1.03); }
+
+    .foot{
+      text-align:center;
+      padding: 14px 12px 18px;
+      font-size: 12px;
+      color: rgba(255,255,255,.55);
+      border-top: 1px solid var(--line);
+    }
+
+  
+    @media (max-width: 900px){
+      .hero{ grid-template-columns: 1fr; text-align:center; }
+      .desc{ margin-left:auto; margin-right:auto; }
+      .socials{ justify-content:center; }
+      .about{ grid-template-columns: 1fr; text-align:center; }
+      .services-grid{ grid-template-columns: 1fr; }
+      .grid{ grid-template-columns: 1fr; }
+      .row{ grid-template-columns: 1fr; }
+      .nav{ display:none; }
+    }
+  </style>
+  
+  </head>
+  <body>
+    <div class="wrap"> 
+      
+    <section class="section" id="home">
+    <div class="topbar">
+    <div class="brand">Portfo<span>lio.</span></div>
+    <div class="nav">
+      <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Pojects</a>
+          <a href="#certificates">Certificates</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="hero">
+        <div>
+          <p class="hello">Hello, My name is</p>
+          <h1 class="name">Yongama Goso</h1>
+          <div class="role">And I'm a <span>Full Stack Developer</span></div>
+          <p class="desc">
+            I build clean, modern and responsive websites and applications. I enjoy turning ideas into
+            real projects that look good and work well on all devices.
+          </p>
+
+    <div class="socials">
+    <a class="icon" href="https://www.facebook.com/yongama.ow.gee" title="Facebook" aria-label="Facebook">
+    <i class="fa-brands fa-facebook-f"></i>
+   </a>
+
+  <a class="icon" href="https://www.instagram.com/big_gee_the_one_and_only/" title="Instagram" aria-label="Instagram">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+
+  <a class="icon" href="https://www.linkedin.com/in/yongama-goso-85aaaa2b0" title="LinkedIn" aria-label="LinkedIn">
+    <i class="fa-brands fa-linkedin-in"></i>
+  </a>
+
+  <a class="icon" href="https://github.com/BigGee6566" title="GitHub" aria-label="GitHub">
+    <i class="fa-brands fa-github"></i>
+  </a>
+</div>
+
+
+          <a class="btn" href="#" download>Download CV</a>
+        </div>
+
+        <div class="hex-wrap">
+          <div class="hex">
+            <img src="assets/profile.png" alt="Profile photo">
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="about" id="about">
+        <div class="hex-wrap">
+          <div class="hex small">
+            <img src="assets/profile.png" alt="Profile photo">
+          </div>
+        </div>
+
+        <div>
+          <h2>About <span>Me</span></h2>
+          <h4>Frontend Developer!</h4>
+          <p>
+            I’m a passionate developer focused on building responsive websites and clean UI.
+            I’m improving my skills every day through real projects, practice, and learning.
+          </p>
+          <a class="btn" href="#projects">Projects</a>
+        </div>
+      </div>
+    </section>
+
+ 
+    <section class="section" id="services">
+      <div class="title">
+        <h2>Our <span>Services</span></h2>
+      </div>
+
+      <div class="services-grid">
+        <div class="service">
+          <div class="s-icon">&lt;/&gt;</div>
+          <h3>Web Development</h3>
+          <p>I build responsive websites that look modern, load fast, and work on phones and PCs.</p>
+          <a href="#">Read More</a>
+        </div>
+
+        <div class="service">
+          <div class="s-icon">✎</div>
+          <h3>Graphic Design</h3>
+          <p>I create clean designs for brands, posters, and UI layouts with a modern style.</p>
+          <a href="#">Read More</a>
+        </div>
+
+        <div class="service">
+          <div class="s-icon">▮▮</div>
+          <h3>Digital Marketing</h3>
+          <p>I help businesses improve online presence with simple content strategies and planning.</p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </section>
+
+<section class="section" id="skills">
+  <div class="skills-wrap">
+    <div class="skills-head">
+      <h2>My <span>Skills</span></h2>
+      <p>
+        These are the programming languages I use to design, build, and maintain modern web
+        and software applications.
+      </p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-box">
+        <span class="tag">HTML</span>
+        <i class="devicon-html5-plain"></i>
+      </div>
+
+      <div class="skill-box">
+        <span class="tag">CSS</span>
+        <i class="devicon-css3-plain"></i>
+      </div>
+
+      <div class="skill-box">
+        <span class="tag">JavaScript</span>
+        <i class="devicon-javascript-plain js"></i>
+      </div>
+
+      <div class="skill-box">
+        <span class="tag">React</span>
+        <i class="devicon-react-original"></i>
+      </div>
+
+      <div class="skill-box">
+        <span class="tag">C#</span>
+        <i class="devicon-csharp-plain"></i>
+      </div>
+
+      <div class="skill-box">
+        <span class="tag">Python</span>
+        <i class="devicon-python-plain"></i>
+      </div>
+
+      <div class="skill-box">
+        <span class="tag">Git</span>
+        <i class="devicon-git-plain"></i>
+      </div>
+
+      <div class="skill-box">
+        <span class="tag">SQL</span>
+        <i class="devicon-mysql-plain"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
+    <section class="section" id="projects">
+      <div class="title">
+        <h2>My <span>Project</span></h2>
+      </div>
+
+      <div class="grid-wrap">
+        <div class="grid">
+         <div class="tile">
+        <img src="assets/p1.jpg" alt="Project 1">
+            <div class="info">
+              <b>PlaceMe – Student Accommodation</b>
+              <small>A student accommodation website designed to help students find affordable residences near the University of Fort Hare. The platform includes property listings, navigation, and call-to-action features for applications and inquiries.</small>
+              <div class="badges">
+               <span class="badge">HTML</span>
+                <span class="badge">CSS</span>
+                <span class="badge js">JavaScript</span>
+                <span class="badge sql">SQL</span>
+             </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <img src="assets/p2.jpg" alt="Project 2">
+            <div class="info">
+              <b>EduRand – Financial Education App</b>
+              <small>A student-focused financial education platform that helps users track savings, complete lessons, and earn achievements.</small>
+            <div class="badges">
+             <span class="badge">HTML</span>
+             <span class="badge">CSS</span>
+             <span class="badge js">JavaScript</span>
+             <span class="badge">UI/UX</span>
+            </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <img src="assets/p3.jpg" alt="Project 3">
+            <div class="info">
+              <b>JourneyMap – Customer Journey Platform</b>
+              <small>  A web platform that visualizes the customer journey from awareness to advocacy using a clean and structured interface.</small>
+              <div class="badges">
+               <span class="badge">HTML</span>
+               <span class="badge">CSS</span>
+               <span class="badge js">JavaScript</span>
+               <span class="badge react">React</span>
+               <span class="badge git">Git</span>
+               <span class="badge">UI/UX</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <img src="assets/p4.jpg" alt="Project 4">
+            <div class="info">
+              <b>Project 4</b>
+              <small>Short description about what you built and the tools you used.</small>
+            </div>
+          </div>
+
+          <div class="tile">
+            <img src="assets/p5.jpg" alt="Project 5">
+            <div class="info">
+              <b>Project 5</b>
+              <small>Short description about what you built and the tools you used.</small>
+            </div>
+          </div>
+
+          <div class="tile">
+            <img src="assets/p6.jpg" alt="Project 6">
+            <div class="info">
+              <b>Project 6</b>
+              <small>Short description about what you built and the tools you used.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="certificates">
+      <div class="title">
+        <h2>My <span>Certificates</span></h2>
+      </div>
+
+      <div class="grid-wrap">
+        <div class="grid">
+          <div class="tile">
+            <img src="assets/certs/c1.jpg" alt="Certificate 1">
+            <div class="info">
+              <b>Certificate 1</b>
+              <small>Course / Institution name here</small>
+            </div>
+          </div>
+
+          <div class="tile">
+            <img src="assets/certs/c2.jpg" alt="Certificate 2">
+            <div class="info">
+              <b>Certificate 2</b>
+              <small>Course / Institution name here</small>
+            </div>
+          </div>
+
+          <div class="tile">
+            <img src="assets/certs/c3.jpg" alt="Certificate 3">
+            <div class="info">
+              <b>Certificate 3</b>
+              <small>Course / Institution name here</small>
+            </div>
+          </div>
+
+          <div class="tile">
+            <img src="assets/certs/c4.jpg" alt="Certificate 4">
+            <div class="info">
+              <b>Certificate 4</b>
+              <small>Course / Institution name here</small>
+            </div>
+          </div>
+
+          <div class="tile">
+            <img src="assets/certs/c5.jpg" alt="Certificate 5">
+            <div class="info">
+              <b>Certificate 5</b>
+              <small>Course / Institution name here</small>
+            </div>
+          </div>
+
+          <div class="tile">
+            <img src="assets/certs/c6.jpg" alt="Certificate 6">
+            <div class="info">
+              <b>Certificate 6</b>
+              <small>Course / Institution name here</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="title">
+        <h2>Contact <span>Me!</span></h2>
+      </div>
+
+      <div class="contact-wrap">
+        <form class="form">
+          <div class="row">
+            <input type="text" placeholder="Full Name" />
+            <input type="email" placeholder="Email Address" />
+          </div>
+
+          <div class="row">
+            <input type="text" placeholder="Mobile Number" />
+            <input type="text" placeholder="Email Subject" />
+          </div>
+
+          <textarea placeholder="Your Message"></textarea>
+          <button class="send" type="button">Send Message</button>
+        </form>
+      </div>
+
+      <div class="foot">
+        Copyright © 2026 by Yongama Goso. All Rights Reserved.
+      </div>
+    </section>
+      
+    </div> 
+  </body>
