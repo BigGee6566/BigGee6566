@@ -16,7 +16,7 @@ The design focuses on simplicity, readability, and a professional layout inspire
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **HTML5** – Page structure and content  
 - **CSS3** – Styling, layout, responsiveness, and animations  
